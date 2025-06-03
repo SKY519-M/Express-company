@@ -18,6 +18,7 @@ body {
   margin: auto;
   margin-top: 2rem;
   z-index: 50;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3); 
 }
 
 .nav-container {
@@ -44,6 +45,13 @@ body {
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+.nav-container a:hover {
+  background-color: #80e4cb;
+  color: #000000; 
+  border-radius: 2rem;
+}
+
+
 #logo {
   margin: 0 10px;
   font-family: "Open Sans", sans-serif;
@@ -66,6 +74,7 @@ body {
   margin: auto;
   margin-top: 2rem;
   border-radius: 4rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); 
 }
 
 .pic1 {
@@ -91,7 +100,7 @@ body {
   width: 35rem;
   height: 30rem;
   margin-top: -1rem;
-  margin-right: -10rem;
+  margin-right: -6rem;
 }
 
 .hero h1 {
@@ -150,6 +159,8 @@ body {
   font-size: 20px;
   border-radius: 16px;
   border: solid white 2px;
+  box-shadow: 5px 5px 10px rgba(170, 90, 43, 0.692); 
+
 }
 
 #intro {
@@ -331,6 +342,7 @@ h3 {
   width: 40rem;
   height: 25rem;
   border-radius: 2rem;
+
 }
 
 .testimonials {
