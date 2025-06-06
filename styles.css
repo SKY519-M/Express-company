@@ -14,7 +14,7 @@ body {
     padding: 0; /* Changed from 20px 20px */
     position: sticky;
     top: 0; /* Make sure sticky works */
-    width: 95rem; /* Adjusted for larger screens */
+    width: 92%; /* Adjusted for larger screens */
     align-items: center;
     justify-content: center;
     margin: auto;
@@ -22,15 +22,16 @@ body {
     z-index: 50;
     /* Crucial for mobile menu absolute positioning */
     position: relative; /* ADD THIS LINE */
+    border-radius: 1rem;
   }
   
   .nav-container {
     display: flex;
     justify-content: space-between; /* Spreads logo and desktop links/hamburger */
     align-items: center;
-    max-width: 90rem; /* Constrain content width */
+    max-width: 95%; /* Constrain content width */
     margin: 0 auto;
-    padding: 20px 20px; /* Added back padding here for the container */
+    padding: 10px 20px; /* Added back padding here for the container */
   }
   
   /* Hide hamburger menu by default on large screens */
@@ -568,7 +569,7 @@ body {
   .pic4 {
     height: 25rem;
     width: 50rem;
-    margin-left: 3rem;
+    margin-left: 4rem;
     justify-content: center;
     border-radius: 2rem;
   }
