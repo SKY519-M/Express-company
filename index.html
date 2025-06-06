@@ -4,28 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EXPRESS</title>
-    <link rel="stylesheet" href="stylesv2.css" />
-    <!-- <link rel="stylesheet" href="script.js"> -->
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
   </head>
   <body>
-    <div class="navbar">
+    <nav class="navbar">
       <div class="nav-container">
-        <div class="nav-left">
+
+        <div class="hamburger-menu" id="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="desktop-nav-links" id="desktop-nav-links">
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Services</a>
-        </div>
-
-        <div id="logo">EXPRESS COMPANY</div>
-
-        <div class="nav-right">
+          <a href="#" id="logo">EXPRESS COMPANY</a>
           <a href="#">Track Package</a>
           <a href="#">Resources</a>
           <a href="#">Contact</a>
         </div>
       </div>
-    </div>
+
+      <div class="mobile-menu" id="mobile-nav-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Track Package</a>
+        <a href="#">Resources</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
 
     <section class="Hero">
       <div>
@@ -38,20 +49,20 @@
 
       <div class="hero">
         <h1>
-          
           <strong>EXPRESS COMPANY LIMITED</strong>
           Where Every Delivery Matters.
         </h1>
         <p>
-          We’re more than just couriers. 
-          We’re your trusted delivery partner, 
-          committed to speed, care, and reliability 
-          every step of the way
+          We’re more than just couriers. We’re your trusted delivery partner,
+          committed to speed, care, and reliability every step of the way.
         </p>
         <button>Get Started</button>
       </div>
       <div>
-        <img src="photo/black-delivery-woman-with-packages-standing-mini-van-reading-shipment-schedule-list.png" class="pic2" />
+        <img
+          src="photo/black-delivery-woman-with-packages-standing-mini-van-reading-shipment-schedule-list.png"
+          class="pic2"
+        />
       </div>
     </section>
 
@@ -71,11 +82,9 @@
             </p>
             <button>Reach out to us</button>
           </div>
-          <div class="box2">
+          <div>
             <img
-              src="photo/close-up-delivery-person-giving-parcel-client.jpg"
-              class="box2"
-            />
+              src="photo/close-up-delivery-person-giving-parcel-client.jpg" class="box2"/>
           </div>
         </div>
       </div>
@@ -171,7 +180,7 @@
           <p>
             "I used to stress over sending important packages, but with Express,
             it’s effortless. Their reliable service gives me peace of mind I
-            finally feel in control of my deliveries."br /><br /><br />
+            finally feel in control of my deliveries. <br /><br />
             — Mark S., 41
           </p>
         </div>
@@ -179,28 +188,47 @@
     </section>
 
     <section class="partners">
-      <h3> We partner with </h3>
-<div class="logo">
-      <div id="logo">
-        <div class="Logo"><img src="photo/Screenshot from 2025-05-23 17-24-42.png" class="Logo">
-          <h5>courier</h5>
-        </div>
-        
-        <div class="Logo"><img src="photo/Screenshot from 2025-05-23 17-25-00.png" class="Logo">
-          <h5>Dynasty</h5>
-        </div>
-        <div class="Logo"> <img src="photo/Screenshot from 2025-05-23 17-25-48.png" class="Logo">
-          <h5>your biz</h5>
+      <h3>We partner with</h3>
+      <div class="logo">
+        <div id="logo">
+          <div class="Logo">
+            <img
+              src="photo/Screenshot from 2025-05-23 17-24-42.png"
+              class="Logo"
+            />
+            <h5>courier</h5>
+          </div>
 
-        </div>
-        <div class="Logo"><img src="photo/Screenshot from 2025-05-23 17-26-21.png" class="Logo">
-          <h5>G4S</h5>
-        </div>
-        <div class="Logo"><img src="photo/Screenshot from 2025-05-23 17-30-30.png" class="Logo">
-          <h5>Johnson</h5>
+          <div class="Logo">
+            <img
+              src="photo/Screenshot from 2025-05-23 17-25-00.png"
+              class="Logo"
+            />
+            <h5>Dynasty</h5>
+          </div>
+          <div class="Logo">
+            <img
+              src="photo/Screenshot from 2025-05-23 17-25-48.png"
+              class="Logo"
+            />
+            <h5>your biz</h5>
+          </div>
+          <div class="Logo">
+            <img
+              src="photo/Screenshot from 2025-05-23 17-26-21.png"
+              class="Logo"
+            />
+            <h5>G4S</h5>
+          </div>
+          <div class="Logo">
+            <img
+              src="photo/Screenshot from 2025-05-23 17-30-30.png"
+              class="Logo"
+            />
+            <h5>Johnson</h5>
+          </div>
         </div>
       </div>
-    </div>
     </section>
 
     <section class="explore">
@@ -208,7 +236,7 @@
         <p class="learn">EXPLORE & LEARN</p>
         <h3>
           Resources for Your <br />
-          Shipping Success
+          Shipping Success.
         </h3>
         <p id="learn">
           Explore expert delivery tips, shipping guides,<br />
@@ -249,7 +277,7 @@
     <section class="community">
       <div class="Community">
         <p id="community">COMMUNITY</p>
-        <h3>You’re Not Alone on the Delivery Journey</h3>
+        <h3>You’re Not Alone on the Delivery Journey.</h3>
         <p id="Community">
           Connect with other senders, share tips and experiences, and get
           support in a trusted, delivery-focused space.
@@ -257,7 +285,7 @@
         <button>Join the Community</button>
       </div>
       <div class="pic4">
-        <img src="photo/Screenshot from 2025-05-28 12-05-33.png" class="pic4">
+        <img src="photo/Screenshot from 2025-05-28 12-05-33.png" class="pic4" />
       </div>
     </section>
 
@@ -268,59 +296,98 @@
             <p id="intro">NEED HELP?</p>
             <h3>
               Frequently <br />
-              Asked Questions
+              Asked Questions.
             </h3>
             <p id="help1">
-              Find answers to common questions about our express 
-              delivery services, shipping policies, tracking, and more.
+              Find answers to common questions about our express delivery
+              services, shipping policies, tracking, and more.
             </p>
             <div class="pic5">
-              <img src="photo/Screenshot from 2025-05-28 12-35-38.png" class="pic5">
+              <img
+                src="photo/Screenshot from 2025-05-28 12-35-38.png"
+                class="pic5"
+              />
             </div>
           </div>
-          <div class="help2">
-            <div>
-              <div class="helps1">
-                <span class="question">How do I book a delivery or pickup?</span> 
-                <span class="answer">You can book directly through our website, mobile app, or by calling our customer service.
-                </span>
-                <button class="toggle-btn" onclick="toggleAnswer(this)">&#x25BC;</button>
-              </div>
-
-              <div class="helps">
-                <span class="question">Do you offer online booking or virtual services?</span> 
-                <span class="answer">Yes, all our services can be booked online through our website or app.</span>
-                <button class="toggle-btn" onclick="toggleAnswer(this)">&#x25BC;</button>
-              </div>
-
-              <div class="helps">
-                <span class="question">
-                  What’s the difference between standard and express delivery? </span> 
-                <span class="answer">Standard delivery is cost-effective with regular speed, while express delivery is faster and prioritized.
-                </span>
-                <button class="toggle-btn" onclick="toggleAnswer(this)">&#x25BC;</button>
-              </div>
-
-              <div class="helps">
-                <span class="question">Do I need a subscription to use your delivery services?</span> 
-                <span class="answer">No subscription is required — you can use our services as needed.
-                </span>
-                <button class="toggle-btn" onclick="toggleAnswer(this)">&#x25BC;</button>
-              </div>
-
-              <div class="helps">
-                <span class="question">Can I change my delivery options if I’m not satisfied?</span> 
-                <span class="answer">Yes, you can modify your delivery preferences before the shipment is finalized.
-                </span>
-                <button class="toggle-btn" onclick="toggleAnswer(this)">&#x25BC;</button>
-              </div>
-
-              <div class="helps">
-                <span class="question">Is my information and delivery history kept confidential with Express?</span>
-                <span class="answer">Yes, we protect your data and delivery history with strict confidentiality and security measures.</span>
-                <button class="toggle-btn" onclick="toggleAnswer(this)">&#x25BC;</button>
+          <div class="faq-container">
+            <h1 class="faq-title">Take a look.</h1>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer(this)">
+                    How do I book a delivery or pickup?
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        You can easily book a delivery or pickup through our mobile app or website. Simply select your service type, choose your pickup and delivery locations, select your preferred time slot, and confirm your booking. You'll receive instant confirmation and tracking details.
+                    </div>
+                </div>
             </div>
-          </div>
+    
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer(this)">
+                    Do you offer online booking or virtual services?
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes, we offer comprehensive online booking through our website and mobile app. You can schedule services, track deliveries in real-time, manage your account, and access customer support virtually. Our digital platform is available 24/7 for your convenience.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer(this)">
+                    What's the difference between standard and express delivery?
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <div class="highlight-box">
+                            Standard delivery is cost-effective with regular speed, while express delivery is faster and prioritized.
+                        </div>
+                        <br>
+                        Standard delivery typically takes 3-5 business days and is perfect for non-urgent items. Express delivery is completed within 1-2 business days with priority handling and faster processing. Express service includes premium tracking and dedicated customer support.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer(this)">
+                    Do I need a subscription to use your delivery services?
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        No subscription is required! You can use our services on a pay-per-use basis. However, we do offer subscription plans with benefits like discounted rates, priority booking, and free delivery credits for frequent users. Choose what works best for your needs.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer(this)">
+                    Can I change my delivery options if I'm not satisfied?
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Absolutely! You can modify your delivery preferences, change delivery addresses, reschedule time slots, or upgrade/downgrade service levels before the pickup occurs. Contact our support team or use the app to make changes. We're committed to your satisfaction.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleAnswer(this)">
+                    Is my information and delivery history kept confidential with Express?
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes, we take your privacy seriously. All personal information, delivery details, and transaction history are encrypted and stored securely. We comply with data protection regulations and never share your information with third parties without your consent. Your confidentiality is our priority.
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
       </div>
     </section>
@@ -345,7 +412,10 @@
         <p><strong>Address:</strong> 123 Wellness Way, Calm City, CA 90210</p>
 
         <div class="pic6">
-          <img src="photo/Screenshot from 2025-05-28 14-35-38.png" class="pic6">
+          <img
+            src="photo/Screenshot from 2025-06-06 14-33-03.png"
+            class="pic6"
+          />
         </div>
 
         <footer>We typically respond within 12 hours or request.</footer>
@@ -389,7 +459,6 @@
 
       <div class="footer2">
         <div class="cta-content">
-          <!-- <img src="photo/Screenshot from 2025-05-28 16-42-39.png" class="pic7"> -->
           <h3>
             Find<br />
             Support,<br />
