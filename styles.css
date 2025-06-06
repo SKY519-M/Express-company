@@ -20,7 +20,6 @@ body {
     margin: auto;
     margin-top: 2rem;
     z-index: 50;
-    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
     /* Crucial for mobile menu absolute positioning */
     position: relative; /* ADD THIS LINE */
   }
@@ -123,15 +122,15 @@ body {
   .Hero {
     display: flex;
     flex-direction: row;
-    padding: 4rem 2rem;
+    padding: 4rem 4rem;
     background-color: hwb(165 80% 5% / 0.911);
     position: relative;
     overflow: hidden;
     height: 25rem;
-    width: 90rem; /* Adjusted for larger screens */
+    width: 85%; /* Adjusted for larger screens */
     margin: auto;
     margin-top: 2rem;
-    border-radius: 4rem;
+    border-radius: 2rem;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     align-items: center;
   }
@@ -214,7 +213,7 @@ body {
   .help2,
   .footer1,
   .footer2 {
-    background-color: hsla(297, 81%, 89%, 0.582); /* Consistent background for cards */
+    background-color: hwb(165 80% 5% / 0.911);
     color: rgb(57, 66, 36);
     border-radius: 1rem; /* Consistent border radius */
     border: solid white 2px;
@@ -317,7 +316,7 @@ body {
     position: relative;
     overflow: hidden;
     height: 25rem;
-    width: 90rem;
+    width: 89%;
     border-radius: 30px;
     margin: auto;
     margin-top: 10px;
@@ -370,13 +369,13 @@ body {
   
   /* Testimonials specific styling */
   .box1A {
-    width: 35rem;
+    width: 32rem;
     height: 20rem;
   }
   
   .box1B,
   .box1C {
-    width: 28rem;
+    width: 27rem;
     height: 20rem;
   }
   
@@ -413,15 +412,17 @@ body {
   }
   
   .logo {
-    padding: 3rem 2rem;
+    padding:0 2rem;
     background-color: #ffffff;
     overflow: hidden;
     height: 8rem;
-    width: 90rem;
-    border-radius: 4rem;
+    width: 89%;
+    border-radius: 2rem;
     margin: auto;
     margin-top: 16px;
     justify-content: center;
+    padding-bottom: 2rem;
+
   }
   
   /* IMPORTANT: Changed #logo for partners section to a class to avoid ID conflict with nav #logo */
@@ -439,6 +440,17 @@ body {
     height: 6rem;
     flex-direction: row;
     border-radius: 1rem;
+    margin-bottom: 1px;
+  }
+
+  .Logos {
+    height: 8rem;
+    width: 7rem;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
   }
   
   .explore {
@@ -508,7 +520,7 @@ body {
     background-color: hwb(165 80% 5% / 0.911);
     position: relative;
     height: 25rem;
-    width: 90rem;
+    width: 100rem;
     border-radius: 30px;
     margin: auto;
     margin-top: 10px;
@@ -593,7 +605,7 @@ body {
   }
   
   .faq-container {
-    max-width: 800px;
+    width: 50rem;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -876,6 +888,7 @@ body {
     margin: auto;
     margin-top: 2rem;
     gap: 4px;
+    padding: 0 5rem;
   }
   
   .footer1 {
@@ -1081,7 +1094,7 @@ body {
     }
   
     .More {
-      width: 100%;
+      width: 85%;
       height: auto;
       flex-direction: column; /* Stack elements */
       padding: 1.5rem;
@@ -1138,6 +1151,11 @@ body {
       height: 4rem;
     }
   
+.Logo h5 {
+  margin-bottom: 1rem;
+}
+
+
     .xmore {
       flex-direction: row;
       flex-wrap: wrap;
@@ -1422,8 +1440,9 @@ body {
   
     .partners #logo {
       /* Targeted with new class to avoid conflict with nav #logo */
-      gap: 1rem;
+      gap: 0rem;
       flex-direction: column; /* Stack logos vertically */
+
     }
   
     .Logo {
