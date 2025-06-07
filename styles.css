@@ -1,205 +1,1098 @@
 /* Base Styles (for LG screens and as a foundation) */
 body {
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: block;
-    justify-content: center;
-    background-color: whitesmoke;
-    margin-left: auto; /* Center the body if max-width is applied */
-    margin-right: auto; /* Center the body if max-width is applied */
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: block;
+  justify-content: center;
+  background-color: whitesmoke;
+  margin-left: auto; /* Center the body if max-width is applied */
+  margin-right: auto; /* Center the body if max-width is applied */
+}
+
+.navbar {
+  background-color: hsl(0, 0%, 100%);
+  padding: 0; /* Changed from 20px 20px */
+  position: sticky;
+  top: 0; /* Make sure sticky works */
+  width: 98rem; /* Adjusted for larger screens */
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2rem;
+  z-index: 50;
+  /* Crucial for mobile menu absolute positioning */
+  position: relative; /* ADD THIS LINE */
+  border-radius: 1rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Spreads logo and desktop links/hamburger */
+  align-items: center;
+  max-width: 90rem; /* Constrain content width */
+  margin: 0 auto;
+  padding: 10px 20px; /* Added back padding here for the container */
+}
+
+/* Hide hamburger menu by default on large screens */
+.hamburger-menu {
+  display: none; /* ADD THIS LINE */
+}
+
+/* Desktop navigation links (now combined from original .nav-left and .nav-right) */
+.desktop-nav-links {
+  display: flex; /* Keep it flex for desktop */
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop-nav-links a {
+  /* Changed from .nav-left a, .nav-right a */
+  color: rgb(13, 31, 12);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 2.2rem; /* Adjusted margin */
+  padding: 8px 12px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-container a:hover {
+  background-color: #80e4cb;
+  color: #000000;
+  border-radius: 2rem;
+}
+
+#logo {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: rgb(13, 31, 12);
+  font-style: oblique;
+  flex-shrink: 0; /* Prevent shrinking */
+  text-decoration: none; /* Ensure logo link has no underline */
+  padding: 0 3rem;
+}
+
+/* Mobile Menu Styling (new section) */
+.mobile-menu {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position relative to .navbar */
+  top: 100%; /* Place it right below the navbar */
+  left: 0;
+  width: 100%;
+  background-color: hsl(0, 0%, 100%); /* Same as navbar background */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  padding: 0.4rem 0;
+  z-index: 40; /* Lower than navbar sticky z-index but above content */
+  /* Optional: Add a transition for smooth opening/closing */
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 0; /* Start with 0 height for transition */
+  overflow: hidden; /* Hide content that exceeds max-height */
+  opacity: 0; /* Start with 0 opacity for fade effect */
+}
+
+.mobile-menu.open {
+  display: flex; /* Show when 'open' class is added by JS */
+  max-height: 500px; /* Adjust as needed to accommodate all links, larger than expected to ensure all content is visible */
+  opacity: 1;
+}
+
+.mobile-menu a {
+  color: rgb(13, 31, 12);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 20px;
+  text-align: center;
+  border-bottom: 1px solid #eee; /* Separator for links */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none; /* No border for the last link */
+}
+
+.mobile-menu a:hover {
+  background-color: #e0f7f4;
+}
+
+/* --- Existing Styles (from your original code) --- */
+
+.Hero {
+  display: flex;
+  flex-direction: row;
+  padding: 4rem 4rem;
+  background-color: hwb(165 80% 5% / 0.911);
+  position: relative;
+  overflow: hidden;
+  height: 25rem;
+  width: 90rem; /* Adjusted for larger screens */
+  margin: auto;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  align-items: center;
+}
+
+.pic1 {
+  width: 25rem;
+  height: 25rem;
+  margin-left: -6rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.pic2 {
+  width: 35rem;
+  height: 30rem;
+  margin-top: -1rem;
+  margin-right: -6rem;
+}
+
+.hero h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.5rem;
+  color: #122e24;
+  margin-top: 0;
+}
+
+.hero p {
+  margin-top: 0.02rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #122e24;
+}
+
+.hero button {
+  margin-top: 0.05rem;
+  padding: 14px 120px;
+  background-color: #12372a;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* General container styling for consistency */
+.container,
+.Container,
+.xmore,
+.testimonials,
+.help,
+.contacts {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem; /* Consistent card spacing */
+  padding: 40px;
+  max-width: 90rem; /* Constrain content width */
+  margin: 0 auto;
+}
+
+.box1,
+.box2,
+#box3,
+#box4,
+.box1A,
+.box1B,
+.box1C,
+.box1D,
+.box1E,
+.box1F,
+.box1G,
+.box1H,
+.box2A,
+.box2B,
+.box2C,
+.help1,
+.help2,
+.footer1,
+.footer2 {
+  background-color: hwb(165 80% 5% / 0.911);
+  color: rgb(57, 66, 36);
+  border-radius: 1rem; /* Consistent border radius */
+  border: solid white 2px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+  padding: 1.5rem; /* Consistent inner padding */
+  flex-grow: 1; /* Allow items to grow */
+  flex-shrink: 0; /* Prevent shrinking below content */
+}
+
+/* Specific card dimensions for LG */
+.box1,
+.box2 {
+  width: 45rem;
+  height: 25rem;
+}
+
+#intro {
+  text-align: left;
+  font-size: 1rem;
+  color: #1d1b1b;
+}
+
+h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.p2 {
+  font-size: 1.5rem;
+}
+
+.about button,
+#box3 button,
+#box4 button {
+  margin-top: 1rem;
+  padding: 1rem 4rem;
+  background-color: #12372a;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.Services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  overflow: hidden;
+  height: 15rem;
+  width: 90rem;
+  border-radius: 30px;
+  margin: auto;
+}
+
+#intro1 {
+  text-align: center;
+  font-size: 1rem;
+  color: #1d1b1b;
+}
+
+.path {
+  text-align: center;
+  margin-top: 4px;
+  font-size: 2rem;
+}
+
+.p3 {
+  font-size: 1.5rem;
+  color: #1d1b1b;
+}
+
+#box3,
+#box4 {
+  width: 45rem;
+  height: 20rem;
+}
+
+#box3 button,
+#box4 button {
+  padding: 0.5rem 2rem;
+  color: rgb(77, 45, 45);
+  border-radius: 20px;
+  font-size: 1.5rem;
+  background-color: #f3f0ec;
+  border: none;
+}
+
+.More {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Align items vertically in center */
+  padding: 4rem;
+  background-color: hwb(165 80% 5% / 0.911);
+  position: relative;
+  overflow: hidden;
+  height: 25rem;
+  width: 90rem;
+  border-radius: 30px;
+  margin: auto;
+  margin-top: 10px;
+  gap: 4rem;
+}
+
+.more {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%; /* Take up half the width */
+}
+
+.more h3 {
+  margin-left: 0; /* Remove negative margin */
+  text-align: left;
+}
+
+#more {
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  margin-left: 0; /* Remove negative margin */
+  margin-top: 1rem;
+  max-width: 45rem;
+}
+
+#Learn {
+  background-color: #003f3c;
+  color: rgb(255, 255, 255);
+  padding: 1rem 2rem;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  margin-left: 0; /* Remove negative margin */
+  border-radius: 4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 35rem; /* Adjust width */
+  margin-top: 4rem;
+}
+
+.pic3 {
+  width: 38rem;
+  height: 25rem;
+  border-radius: 2rem;
+  margin: auto;
+  margin-left: 3rem;
+}
+
+/* Testimonials specific styling */
+.box1A {
+  width: 32rem;
+  height: 30rem;
+}
+
+.box1B,
+.box1C,
+.box1D,
+.box1E,
+.box1F,
+.box1G,
+.box1H {
+  width: 27rem;
+  height: 20rem;
+  margin-top: 2.5rem;
+}
+
+.testimonials p {
+  font-size: 1.5rem;
+  padding-left: 2rem;
+}
+
+#testimonials {
+  font-size: 1rem;
+}
+
+.testimonials h4 {
+  margin-top: 10px;
+  margin-left: 2rem;
+  font-size: 2rem;
+  margin-bottom: 0px;
+}
+
+.testimonials button {
+  font-size: 2rem;
+  background-color: #92aadd;
+  color: rgb(12, 0, 0);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.partners {
+  text-align: center;
   }
-  
-  .navbar {
-    background-color: hsl(0, 0%, 100%);
-    padding: 0; /* Changed from 20px 20px */
-    position: sticky;
-    top: 0; /* Make sure sticky works */
-    width: 92%; /* Adjusted for larger screens */
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 2rem;
-    z-index: 50;
-    /* Crucial for mobile menu absolute positioning */
-    position: relative; /* ADD THIS LINE */
-    border-radius: 1rem;
+
+  .partners h3 {
+    margin-top: 4rem;
   }
-  
-  .nav-container {
-    display: flex;
-    justify-content: space-between; /* Spreads logo and desktop links/hamburger */
-    align-items: center;
-    max-width: 95%; /* Constrain content width */
-    margin: 0 auto;
-    padding: 10px 20px; /* Added back padding here for the container */
+
+.logo {
+  padding: 0 2rem;
+  background-color: #ffffff;
+  overflow: hidden;
+  height: 8rem;
+  width: 95rem;
+  border-radius: 2rem;
+  margin: auto;
+  margin-top: 16px;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+/* IMPORTANT: Changed #logo for partners section to a class to avoid ID conflict with nav #logo */
+.partners #logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  margin: auto;
+}
+
+.Logo {
+  width: 6rem;
+  height: 6rem;
+  flex-direction: row;
+  border-radius: 1rem;
+  margin-bottom: 1px;
+}
+
+.Logos {
+  height: 8rem;
+  width: 7rem;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+}
+
+.explore {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+#learn {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.learn {
+  font-size: 1rem;
+  align-items: center;
+}
+
+.explore h4 {
+  margin-top: 2px;
+  font-size: 25px;
+}
+
+.box2A,
+.box2B,
+.box2C {
+  width: 30rem;
+  height: 20rem;
+}
+
+.xmore h3 {
+  margin-top: 1.5rem;
+}
+
+.xmore p {
+  font-size: 1.5rem;
+  padding-left: 2.25rem;
+  text-align: left;
+}
+
+.box2A button,
+.box2B button,
+.box2C button {
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 40px;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+}
+.box2A button {
+  background-color: #dfe232;
+}
+.box2B button {
+  background-color: #30dd3e;
+}
+.box2C button {
+  background-color: #e26464;
+}
+
+.community {
+  align-items: flex-start;
+  background-color: hwb(165 80% 5% / 0.911);
+  position: relative;
+  height: 25rem;
+  width: 94rem;
+  border-radius: 30px;
+  margin: auto;
+  margin-top: 10px;
+  padding: 4rem;
+  flex-direction: row;
+  display: flex;
+  gap: 4rem;
+}
+
+.Community {
+  display: block;
+  text-align: left;
+  max-width: 30rem;
+}
+
+.community p {
+  font-size: 1rem;
+  text-align: left;
+  margin-top: 4px;
+}
+
+.community h3 {
+  text-align: left;
+  margin-left: 0;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+#Community {
+  text-align: left;
+  margin-left: 0;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.community button {
+  color: white;
+  background-color: #122e24;
+  border: 1px;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin-left: 0;
+}
+
+.pic4 {
+  height: 25rem;
+  width: auto;
+  margin-left: 4rem;
+  justify-content: center;
+  border-radius: 1.5rem;
+  margin-right: -10rem;
+}
+
+.help1 {
+  width: 45rem;
+  height: 50rem;
+}
+
+.help1 p {
+  margin-top: 3rem;
+  font-weight: 600;
+}
+
+.help1 h3 {
+  font-size: 3rem;
+}
+
+#help1 {
+  font-size: 1.5rem;
+  margin-left: 2.5rem;
+}
+
+.pic5 {
+  width: 40rem;
+  height: 25rem;
+  margin: auto;
+  border-radius: 2rem;
+}
+
+.help2 {
+  width: 45rem;
+  height: 50rem;
+}
+
+.faq-container {
+  width: 45rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.faq-question {
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+  border: none;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-question::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.faq-question:hover::before {
+  transform: scaleY(1);
+}
+
+.faq-question:hover {
+  background: linear-gradient(135deg, #e8f0ff 0%, #d4e6ff 100%);
+  padding-left: 2rem;
+}
+
+.faq-arrow {
+  font-size: 1.2rem;
+  color: #667eea;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.faq-question.active .faq-arrow {
+  transform: rotate(180deg);
+  color: #764ba2;
+}
+
+.faq-answer {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+}
+
+.faq-answer.open {
+  padding: 1.5rem;
+  max-height: 300px;
+}
+
+.faq-answer-content {
+  color: rgb(34, 55, 97);
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
   }
-  
-  /* Hide hamburger menu by default on large screens */
-  .hamburger-menu {
-    display: none; /* ADD THIS LINE */
+
+  .faq-container {
+    padding: 1.5rem;
   }
-  
-  /* Desktop navigation links (now combined from original .nav-left and .nav-right) */
-  .desktop-nav-links {
-    display: flex; /* Keep it flex for desktop */
-    align-items: center;
-    justify-content: center;
+
+  .faq-title {
+    font-size: 2rem;
   }
-  
-  .desktop-nav-links a {
-    /* Changed from .nav-left a, .nav-right a */
-    color: rgb(13, 31, 12);
-    text-decoration: none;
+
+  .faq-question {
+    padding: 1.25rem;
     font-size: 1rem;
-    font-weight: 600;
-    margin: 0 2.2rem; /* Adjusted margin */
-    padding: 8px 12px;
-    transition: color 0.3s ease, background-color 0.3s ease;
   }
-  
-  .nav-container a:hover {
-    background-color: #80e4cb;
-    color: #000000;
-    border-radius: 2rem;
+}
+
+.helps1,
+.helps {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  width: 40rem;
+  height: 5rem;
+  background-color: white;
+  margin: auto;
+  margin-top: 2.5rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.helps1 {
+  margin-top: 5rem;
+}
+
+.question {
+  margin-left: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+}
+
+.help2 button {
+  margin-left: 4rem;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 2rem;
+  background-color: white;
+  color: #80e4cb;
+}
+
+.answer {
+  display: none;
+  color: #1d1b1b;
+  font-weight: 500;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  color: #0a6568;
+}
+
+.contacts {
+  height: 35rem;
+  width: 90rem;
+  background-color: hwb(165 80% 5% / 0.911);
+  margin: auto;
+  margin-top: 4rem;
+  border-radius: 2rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.details {
+  height: 36rem;
+  width: 42rem;
+  margin: auto;
+  margin-left: 1.5rem;
+}
+
+.details p {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  font-weight: 500;
+}
+
+.details h3 {
+  font-size: 2rem;
+  margin-left: 0.55rem;
+  margin-top: 2rem;
+}
+
+.pic6 {
+  width: 40rem;
+  height: 6rem;
+  /* margin-left: 1rem; */
+  border-radius: 2rem;
+}
+
+.details footer {
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  color: rgb(7, 6, 6);
+  margin-bottom: 1px;
+  margin-top: 6rem;
+  align-items: self-start;
+}
+
+.message {
+  width: 35rem;
+  height: 25rem;
+  border: 1px solid rgb(254, 254, 255);
+  border-radius: 3rem;
+  background-color: white;
+  margin-top: 3rem;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.3rem;
+  margin-left: 1.5rem;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+#text {
+  width: 80%;
+  border: none;
+  border-bottom: 3px solid #003b3b;
+  padding: 8px 0;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  color: #003b3b;
+  background: transparent;
+  outline: none;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.message button {
+  width: 80%;
+  background-color: #003b3b;
+  color: white;
+  padding: 12px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+button:hover {
+  background-color: #0f1b1b;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2rem;
+  gap: 4px;
+  padding: 0 16rem;
+}
+
+.footer1 {
+  width: 30rem;
+  height: 32rem;
+  border-radius: 2rem;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 2rem;
+}
+
+.Footer1 {
+  display: flex;
+  flex-direction: column;
+  /* margin: 1rem; */
+  margin-top: 1rem;
+}
+
+.footer1 a {
+  line-height: 1.3rem;
+  font-family: Arial, sans-serif;
+  margin-inline: 1rem;
+  text-decoration: none;
+  color: #003b3b;
+  font-size: 1.5rem;
+  margin-top: 4rem;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 20px;
+  font-size: 13px;
+  color: rgb(139, 139, 139);
+  font-weight: 600;
+}
+
+.footer2 {
+  width: 30rem;
+  height: 32rem;
+  border-radius: 2rem;
+  background-image: url("photo/Screenshot from 2025-05-28 16-42-39.png");
+  overflow: hidden;
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-size: cover;
+  margin-left: 1rem;
+}
+
+.cta-content {
+  max-width: 300px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  height: 27rem;
+}
+
+.cta-content h3 {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  color: #000000;
+}
+
+.cta-button {
+  background-color: white;
+  color: #037a7a;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 2rem;
+}
+
+/* --- Media Queries --- */
+
+/* MD Breakpoint (Tablet) - 768px to 1024px */
+@media (max-width: 1024px) {
+  body {
+    padding: 1rem;
+    height: auto; /* Adjust height for content */
+    max-width: none; /* Remove max-width on smaller screens */
   }
-  
-  #logo {
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: rgb(13, 31, 12);
-    font-style: oblique;
-    flex-shrink: 0; /* Prevent shrinking */
-    text-decoration: none; /* Ensure logo link has no underline */
-    padding: 0 3rem;
-  }
-  
-  /* Mobile Menu Styling (new section) */
-  .mobile-menu {
-    display: none; /* Hidden by default */
-    position: absolute; /* Position relative to .navbar */
-    top: 100%; /* Place it right below the navbar */
-    left: 0;
+
+  .navbar {
     width: 100%;
-    background-color: hsl(0, 0%, 100%); /* Same as navbar background */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+    padding: 0 1rem;
+    position: relative; /* Needed for absolute positioning of menu */
+  }
+
+  /* Hide desktop navigation links */
+  .desktop-nav-links {
+    /* Changed from .nav-right */
+    display: none; /* HIDE DESKTOP NAV */
+  }
+
+  /* Hamburger menu icon styling (new section) */
+  .hamburger-menu {
+    display: flex; /* SHOW HAMBURGER ICON */
     flex-direction: column;
-    padding: 1rem 0;
-    z-index: 40; /* Lower than navbar sticky z-index but above content */
-    /* Optional: Add a transition for smooth opening/closing */
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    max-height: 0; /* Start with 0 height for transition */
-    overflow: hidden; /* Hide content that exceeds max-height */
-    opacity: 0; /* Start with 0 opacity for fade effect */
-  }
-  
-  .mobile-menu.open {
-    display: flex; /* Show when 'open' class is added by JS */
-    max-height: 500px; /* Adjust as needed to accommodate all links, larger than expected to ensure all content is visible */
-    opacity: 1;
-  }
-  
-  .mobile-menu a {
-    color: rgb(13, 31, 12);
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 12px 20px;
-    text-align: center;
-    border-bottom: 1px solid #eee; /* Separator for links */
-    transition: background-color 0.3s ease;
-  }
-  
-  .mobile-menu a:last-child {
-    border-bottom: none; /* No border for the last link */
-  }
-  
-  .mobile-menu a:hover {
-    background-color: #e0f7f4;
-  }
-  
-  /* --- Existing Styles (from your original code) --- */
-  
-  .Hero {
-    display: flex;
-    flex-direction: row;
-    padding: 4rem 4rem;
-    background-color: hwb(165 80% 5% / 0.911);
-    position: relative;
-    overflow: hidden;
-    height: 25rem;
-    width: 85%; /* Adjusted for larger screens */
-    margin: auto;
-    margin-top: 2rem;
-    border-radius: 2rem;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-    align-items: center;
-  }
-  
-  .pic1 {
-    width: 25rem;
-    height: 25rem;
-    margin-left: -6rem;
-  }
-  
-  .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    text-align: center;
-    margin: 0;
-    flex-grow: 1;
-  }
-  
-  .pic2 {
-    width: 35rem;
-    height: 30rem;
-    margin-top: -1rem;
-    margin-right: -6rem;
-  }
-  
-  .hero h1 {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 2.5rem;
-    color: #122e24;
-    margin-top: 0;
-  }
-  
-  .hero p {
-    margin-top: 0.02rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #122e24;
-  }
-  
-  .hero button {
-    margin-top: 0.05rem;
-    padding: 14px 120px;
-    background-color: #12372a;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    font-size: 1.25rem;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
     cursor: pointer;
+    z-index: 60; /* Ensure it's above other elements */
+    margin-left: auto; /* Pushes hamburger to the right */
   }
-  
-  /* General container styling for consistency */
+
+  .hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Styles for the opened hamburger menu (animated X) */
+  .hamburger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-menu.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Mobile menu (hidden by default) - already defined in base styles, just need to ensure its open class works */
+
+  #logo {
+    font-size: 1.2rem;
+  }
+
+  .Hero {
+    width: 100%;
+    height: auto;
+    flex-direction: column; /* Stack elements */
+    padding: 2rem 1rem;
+    border-radius: 2rem;
+  }
+
+  .pic1,
+  .pic2 {
+    width: 80%; /* Adjust image size */
+    height: auto;
+    margin: 1rem auto; /* Center images */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .hero button {
+    padding: 12px 60px;
+    font-size: 1rem;
+  }
+
   .container,
   .Container,
   .xmore,
   .testimonials,
   .help,
   .contacts {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem; /* Consistent card spacing */
-    padding: 40px;
-    max-width: 90rem; /* Constrain content width */
-    margin: 0 auto;
+    flex-wrap: wrap; /* Allow items to wrap */
+    padding: 20px;
+    gap: 1rem; /* Smaller gap */
+    width: 100%; /* Take full width */
+    max-width: none; /* Remove max-width constraint */
   }
-  
+
   .box1,
   .box2,
   #box3,
@@ -211,1395 +1104,618 @@ body {
   .box2B,
   .box2C,
   .help1,
-  .help2,
-  .footer1,
-  .footer2 {
-    background-color: hwb(165 80% 5% / 0.911);
-    color: rgb(57, 66, 36);
-    border-radius: 1rem; /* Consistent border radius */
-    border: solid white 2px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Consistent shadow */
-    padding: 1.5rem; /* Consistent inner padding */
-    flex-grow: 1; /* Allow items to grow */
-    flex-shrink: 0; /* Prevent shrinking below content */
+  .help2 {
+    width: 100%; /* Take full width */
+    height: auto; /* Adjust height dynamically */
+    padding: 1rem;
   }
-  
-  /* Specific card dimensions for LG */
-  .box1,
-  .box2 {
-    width: 45rem;
-    height: 25rem;
-  }
-  
-  #intro {
-    text-align: left;
-    font-size: 1rem;
-    color: #1d1b1b;
-  }
-  
-  h3 {
-    font-family: 'Manrope', sans-serif;
-    font-size: 2rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;  }
-  
-  .p2 {
-    font-size: 1.5rem;
-  }
-  
-  .about button,
-  #box3 button,
-  #box4 button {
-    margin-top: 1rem;
-    padding: 1rem 4rem;
-    background-color: #12372a;
-    color: white;
-    border: none;
-    border-radius: 1rem;
-    font-size: 1.25rem;
-    cursor: pointer;
-  }
-  
-  .Services {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1rem;
-    text-align: center;
-    overflow: hidden;
-    height: 15rem;
-    width: 90rem;
-    border-radius: 30px;
-    margin: auto;
-  }
-  
-  #intro1 {
-    text-align: center;
-    font-size: 1rem;
-    color: #1d1b1b;
-  }
-  
-  .path {
-    text-align: center;
-    margin-top: 4px;
-    font-size: 2rem;
-  }
-  
-  .p3 {
-    font-size: 1.5rem;
-    color: #1d1b1b;
-  }
-  
-  #box3,
-  #box4 {
-    width: 45rem;
-    height: 20rem;
-  }
-  
-  #box3 button,
-  #box4 button {
-    padding: 0.5rem 2rem;
-    color: rgb(77, 45, 45);
-    border-radius: 20px;
-    font-size: 1.5rem;
-    background-color: #f3f0ec;
-    border: none;
-  }
-  
-  .More {
-    display: flex;
-    flex-direction: row;
-    align-items: center; /* Align items vertically in center */
-    padding: 2rem;
-    background-color: hwb(165 80% 5% / 0.911);
-    position: relative;
-    overflow: hidden;
-    height: 25rem;
-    width: 89%;
-    border-radius: 30px;
-    margin: auto;
-    margin-top: 10px;
-    gap: 4rem;
 
+  .More {
+    width: 85%;
+    height: auto;
+    flex-direction: column; /* Stack elements */
+    padding: 1.5rem;
   }
-  
+
   .more {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 50%; /* Take up half the width */
+    flex-basis: auto; /* Remove fixed basis */
   }
-  
-  .more h3 {
-    margin-left: 0; /* Remove negative margin */
-    text-align: left;
-  }
-  
-  #more {
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-    margin-left: 0; /* Remove negative margin */
-    margin-top: 1rem;
-    max-width: 45rem;
-  }
-  
-  #Learn {
-    background-color: #003f3c;
-    color: rgb(255, 255, 255);
-    padding: 1rem 2rem;
-    font-size: 16px;
-    font-weight: 400;
-    border: none;
-    margin-left: 0; /* Remove negative margin */
-    border-radius: 4rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 35rem; /* Adjust width */
-    margin-top: 4rem;
-  }
-  
+
   .pic3 {
-    width: 38rem;
-    height: 25rem;
-    border-radius: 2rem;
-    margin: auto;
-    margin-left: 3rem;
+    width: 90%;
+    height: auto;
+    margin: 1rem auto;
   }
-  
-  /* Testimonials specific styling */
+
+  .testimonials {
+    flex-direction: row; /* Keep row for 2 columns if space allows */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .box1A {
-    width: 32rem;
-    height: 20rem;
+    width: 100%; /* Main testimonial section takes full width */
   }
-  
+
   .box1B,
   .box1C {
-    width: 27rem;
-    height: 20rem;
-  }
-  
-  .testimonials p {
-    font-size: 1.5rem;
-    padding-left: 2rem;
-  }
-  
-  #testimonials {
-    font-size: 1rem;
-  }
-  
-  .testimonials h4 {
-    margin-top: 10px;
-    margin-left: 2rem;
-    font-size: 2rem;
-    margin-bottom: 0px;
-  }
-  
-  .testimonials button {
-    font-size: 2rem;
-    background-color: #92aadd;
-    color: rgb(12, 0, 0);
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    cursor: pointer;
-    margin: 0.5rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .partners {
-    text-align: center;
-  }
-  
-  .logo {
-    padding:0 2rem;
-    background-color: #ffffff;
-    overflow: hidden;
-    height: 8rem;
-    width: 89%;
-    border-radius: 2rem;
-    margin: auto;
-    margin-top: 16px;
-    justify-content: center;
-    padding-bottom: 2rem;
-
-  }
-  
-  /* IMPORTANT: Changed #logo for partners section to a class to avoid ID conflict with nav #logo */
-  .partners #logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 6rem;
-    margin: auto;
-  }
-  
-  .Logo {
-    width: 6rem;
-    height: 6rem;
-    flex-direction: row;
-    border-radius: 1rem;
-    margin-bottom: 1px;
-  }
-
-  .Logos {
-    height: 8rem;
-    width: 7rem;
-    margin-top: 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .explore {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding-top: 1rem;
+    width: calc(
+      50% - 1rem
+    ); /* Two columns, considering gap, for testimonials */
     margin-top: 1rem;
   }
-  
-  #learn {
-    text-align: center;
+
+  .testimonials button {
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.5rem;
-    margin-top: 0.5rem;
   }
-  
-  .learn {
-    font-size: 1rem;
-    align-items: center;
+
+  .logo {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem 1rem;
   }
-  
-  .explore h4 {
-    margin-top: 2px;
-    font-size: 25px;
+
+  .partners #logo {
+    /* Targeted with new class to avoid conflict with nav #logo */
+    gap: 2rem; /* Reduce gap between logos */
+    flex-wrap: wrap; /* Allow logos to wrap */
   }
-  
+
+  .Logo {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .Logo h5 {
+    margin-bottom: 1rem;
+  }
+
+  .xmore {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .box2A,
   .box2B,
   .box2C {
-    width: 30rem;
-    height: 20rem;
+    width: calc(
+      50% - 1rem
+    ); /* Two columns, considering gap, for explore cards */
+    margin-bottom: 1rem;
   }
-  
-  .xmore h3 {
-    margin-top: 1.5rem;
-  }
-  
-  .xmore p {
-    font-size: 1.5rem;
-    padding-left: 2.25rem;
-    text-align: left;
-  }
-  
-  .box2A button,
-  .box2B button,
-  .box2C button {
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-left: 40px;
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
-  }
-  .box2A button {
-    background-color: #dfe232;
-  }
-  .box2B button {
-    background-color: #30dd3e;
-  }
-  .box2C button {
-    background-color: #e26464;
-  }
-  
+
   .community {
-    align-items: flex-start;
-    background-color: hwb(165 80% 5% / 0.911);
-    position: relative;
-    height: 25rem;
-    width: 100rem;
-    border-radius: 30px;
-    margin: auto;
-    margin-top: 10px;
-    padding: 2rem;
-    flex-direction: row;
-    display: flex;
-    gap: 4rem;
-  }
-  
-  .Community {
-    display: block;
-    text-align: left;
-    max-width: 30rem;
-  }
-  
-  .community p {
-    font-size: 1rem;
-    text-align: left;
-    margin-top: 4px;
-  }
-  
-  .community h3 {
-    text-align: left;
-    margin-left: 0;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-  }
-  
-  #Community {
-    text-align: left;
-    margin-left: 0;
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-  
-  .community button {
-    color: white;
-    background-color: #122e24;
-    border: 1px;
-    border-radius: 1rem;
-    padding: 1rem 2rem;
-    margin-left: 0;
-  }
-  
-  .pic4 {
-    height: 25rem;
-    width: 50rem;
-    margin-left: 4rem;
-    justify-content: center;
-    border-radius: 2rem;
-  }
-  
-  .help1 {
-    width: 45rem;
-    height: 50rem;
-  }
-  
-  .help1 p {
-    margin-top: 3rem;
-    font-weight: 600;
-  }
-  
-  .help1 h3 {
-    font-size: 3rem;
-  }
-  
-  #help1 {
-    font-size: 1.5rem;
-    margin-left: 2.5rem;
-  }
-  
-  .pic5 {
-    width: 40rem;
-    height: 25rem;
-    margin: auto;
-    border-radius: 2rem;
-  }
-  
-  .help2 {
-    width: 45rem;
-    height: 50rem;
-  }
-  
-  .faq-container {
-    width: 50rem;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-  
-  .faq-title {
-    text-align: center;
-    color: #333;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .faq-item {
-    margin-bottom: 1rem;
-    border-radius: 15px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-  }
-  
-  .faq-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-  
-  .faq-question {
-    background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
-    border: none;
-    padding: 1.5rem;
     width: 100%;
-    text-align: left;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .faq-question::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    transform: scaleY(0);
-    transition: transform 0.3s ease;
-  }
-  
-  .faq-question:hover::before {
-    transform: scaleY(1);
-  }
-  
-  .faq-question:hover {
-    background: linear-gradient(135deg, #e8f0ff 0%, #d4e6ff 100%);
-    padding-left: 2rem;
-  }
-  
-  .faq-arrow {
-    font-size: 1.2rem;
-    color: #667eea;
-    transition: all 0.3s ease;
-    font-weight: bold;
-  }
-  
-  .faq-question.active .faq-arrow {
-    transform: rotate(180deg);
-    color: #764ba2;
-  }
-  
-  .faq-answer {
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: white;
-  }
-  
-  .faq-answer.open {
+    height: auto;
+    flex-direction: column;
     padding: 1.5rem;
-    max-height: 300px;
+    gap: 1rem;
   }
-  
-  .faq-answer-content {
-    color: #666;
-    line-height: 1.6;
-    font-size: 1rem;
+
+  .pic4 {
+    /* width: 90%; */
+    height: auto;
+    margin: 1rem auto;
   }
-  
-  .highlight-box {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-top: 1rem;
-    font-weight: 500;
+
+  .help {
+    flex-direction: column; /* Stack help sections */
   }
-  
-  @media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-    
-    .faq-container {
-        padding: 1.5rem;
-    }
-    
-    .faq-title {
-        font-size: 2rem;
-    }
-    
-    .faq-question {
-        padding: 1.25rem;
-        font-size: 1rem;
-    }
+
+  .help1,
+  .help2 {
+    height: auto; /* Auto height for content */
   }
 
   .helps1,
   .helps {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    width: 40rem;
-    height: 5rem;
-    background-color: white;
-    margin: auto;
-    margin-top: 2.5rem;
-    border-radius: 1rem;
-    font-size: 1.5rem;
-    justify-content: center;
-    align-items: center;
+    width: 90%; /* Adjust width for smaller screens */
+    font-size: 1.3rem;
   }
-  
-  .helps1 {
-    margin-top: 5rem;
-  }
-  
-  .question {
-    margin-left: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4rem;
-  }
-  
-  .help2 button {
-    margin-left: 4rem;
-    font-size: 2rem;
-    border: none;
-    cursor: pointer;
-    margin-right: 2rem;
-    background-color: white;
-    color: #80e4cb;
-  }
-  
+
+  .question,
   .answer {
-    display: none;
-    color: #1d1b1b;
-    font-weight: 500;
-    margin-left: 2rem;
-    font-size: 1.5rem;
-    color: #0a6568;
-  }
-  
-  .contacts {
-    height: 35rem;
-    width: 90rem;
-    background-color: hwb(165 80% 5% / 0.911);
-    margin: auto;
-    margin-top: 4rem;
-    border-radius: 2rem;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .details {
-    height: 36rem;
-    width: 42rem;
-    margin: auto;
-    margin-left: 1.5rem;
-  }
-  
-  .details p {
-    font-size: 1.5rem;
-    margin-left: 2rem;
-    font-weight: 500;
-  }
-  
-  .details h3 {
-    font-size: 2rem;
-    margin-left: 0.55rem;
-    margin-top: 2rem;
-  }
-  
-  .pic6 {
-    width: 40rem;
-    height: 6rem;
-    /* margin-left: 1rem; */
-    border-radius: 2rem;
-  }
-  
-  .details footer {
     font-size: 1.2rem;
-    margin-left: 2rem;
-    color: rgb(7, 6, 6);
-    margin-bottom: 1px;
-    margin-top: 6rem;
-    align-items: self-start;
+    margin-left: 1rem;
   }
-  
-  .message {
-    width: 35rem;
-    height: 25rem;
-    border: 1px solid rgb(254, 254, 255);
-    border-radius: 3rem;
-    background-color: white;
-    margin-top: 3rem;
-    flex-direction: column;
-  }
-  
-  label {
-    font-size: 1.3rem;
-    margin-left: 1.5rem;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.5rem;
-  }
-  
-  #text {
-    width: 80%;
-    border: none;
-    border-bottom: 3px solid #003b3b;
-    padding: 8px 0;
-    margin-bottom: 1rem;
-    font-size: 16px;
-    color: #003b3b;
-    background: transparent;
-    outline: none;
-    margin-left: 2rem;
-    margin-top: 1rem;
-  }
-  
-  .message button {
-    width: 80%;
-    background-color: #003b3b;
-    color: white;
-    padding: 12px;
-    font-size: 1.3rem;
-    border: none;
-    border-radius: 999px;
-    cursor: pointer;
-    margin-left: 2rem;
-    margin-top: 2rem;
-  }
-  button:hover {
-    background-color: #0f1b1b;
-  }
-  
-  .footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: auto;
-    justify-content: center;
-    margin: auto;
-    margin-top: 2rem;
-    gap: 4px;
-    padding: 0 5rem;
-  }
-  
-  .footer1 {
-    width: 30rem;
-    height: 32rem;
-    border-radius: 2rem;
-    background-color: #ffffff;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  
-  .footer div {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin-top: 2rem;
-  }
-  
-  .Footer1 {
-    display: flex;
-    flex-direction: column;
-    /* margin: 1rem; */
-    margin-top: 1rem;
-  }
-  
-  .footer1 a {
-    line-height: 1.3rem;
-    font-family: Arial, sans-serif;
-    margin-inline: 1rem;
-    text-decoration: none;
-    color: #003b3b;
+
+  .help2 button {
     font-size: 1.5rem;
-    margin-top: 4rem;
-  }
-  
-  .copyright {
-    position: absolute;
-    bottom: 20px;
-    font-size: 13px;
-    color: rgb(139, 139, 139);
-    font-weight: 600;
-  }
-  
-  .footer2 {
-    width: 30rem;
-    height: 32rem;
-    border-radius: 2rem;
-    background-image: url("photo/Screenshot from 2025-05-28 16-42-39.png");
-    overflow: hidden;
-    background-repeat: no-repeat;
-    justify-content: center;
-    background-size: cover;
-    margin-left: 1rem;
-  }
-  
-  .cta-content {
-    max-width: 300px;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    height: 27rem;
-  }
-  
-  .cta-content h3 {
-    font-family: "Courier New", Courier, monospace;
-    font-weight: 900;
-    color: #000000;
-  }
-  
-  .cta-button {
-    background-color: white;
-    color: #037a7a;
-    padding: 12px 24px;
-    border-radius: 999px;
-    border: none;
-    font-size: 1.25rem;
-    cursor: pointer;
-    margin-top: 10px;
     margin-left: 2rem;
   }
-  
-  /* --- Media Queries --- */
-  
-  /* MD Breakpoint (Tablet) - 768px to 1024px */
-  @media (max-width: 1024px) {
-    body {
-      padding: 1rem;
-      height: auto; /* Adjust height for content */
-      max-width: none; /* Remove max-width on smaller screens */
-    }
-  
-    .navbar {
-      width: 100%;
-      margin-top: 1rem;
-      padding: 0 1rem;
-      position: relative; /* Needed for absolute positioning of menu */
-    }
-  
-    /* Hide desktop navigation links */
-    .desktop-nav-links {
-      /* Changed from .nav-right */
-      display: none; /* HIDE DESKTOP NAV */
-    }
-  
-    /* Hamburger menu icon styling (new section) */
-    .hamburger-menu {
-      display: flex; /* SHOW HAMBURGER ICON */
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 25px;
-      cursor: pointer;
-      z-index: 60; /* Ensure it's above other elements */
-      margin-left: auto; /* Pushes hamburger to the right */
-    }
-  
-    .hamburger-menu span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: #333;
-      border-radius: 3px;
-      transition: all 0.3s ease-in-out;
-    }
-  
-    /* Styles for the opened hamburger menu (animated X) */
-    .hamburger-menu.open span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-  
-    .hamburger-menu.open span:nth-child(2) {
-      opacity: 0;
-    }
-  
-    .hamburger-menu.open span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-  
-    /* Mobile menu (hidden by default) - already defined in base styles, just need to ensure its open class works */
-  
-    #logo {
-      font-size: 1.2rem;
-    }
-  
-    .Hero {
-      width: 100%;
-      height: auto;
-      flex-direction: column; /* Stack elements */
-      padding: 2rem 1rem;
-      border-radius: 2rem;
-    }
-  
-    .pic1,
-    .pic2 {
-      width: 80%; /* Adjust image size */
-      height: auto;
-      margin: 1rem auto; /* Center images */
-    }
-  
-    .hero h1 {
-      font-size: 2rem;
-    }
-  
-    .hero p {
-      font-size: 1.2rem;
-    }
-  
-    .hero button {
-      padding: 12px 60px;
-      font-size: 1rem;
-    }
-  
-    .container,
-    .Container,
-    .xmore,
-    .testimonials,
-    .help,
-    .contacts {
-      flex-wrap: wrap; /* Allow items to wrap */
-      padding: 20px;
-      gap: 1rem; /* Smaller gap */
-      width: 100%; /* Take full width */
-      max-width: none; /* Remove max-width constraint */
-    }
-  
-    .box1,
-    .box2,
-    #box3,
-    #box4,
-    .box1A,
-    .box1B,
-    .box1C,
-    .box2A,
-    .box2B,
-    .box2C,
-    .help1,
-    .help2 {
-      width: 100%; /* Take full width */
-      height: auto; /* Adjust height dynamically */
-      padding: 1rem;
-    }
-  
-    .More {
-      width: 85%;
-      height: auto;
-      flex-direction: column; /* Stack elements */
-      padding: 1.5rem;
-    }
-  
-    .more {
-      flex-basis: auto; /* Remove fixed basis */
-    }
-  
-    .pic3 {
-      width: 90%;
-      height: auto;
-      margin: 1rem auto;
-    }
-  
-    .testimonials {
-      flex-direction: row; /* Keep row for 2 columns if space allows */
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .box1A {
-      width: 100%; /* Main testimonial section takes full width */
-    }
-  
-    .box1B,
-    .box1C {
-      width: calc(
-        50% - 1rem
-      ); /* Two columns, considering gap, for testimonials */
-      margin-top: 1rem;
-    }
-  
-    .testimonials button {
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 1.5rem;
-    }
-  
-    .logo {
-      width: 100%;
-      height: auto;
-      padding: 1.5rem 1rem;
-    }
-  
-    .partners #logo {
-      /* Targeted with new class to avoid conflict with nav #logo */
-      gap: 2rem; /* Reduce gap between logos */
-      flex-wrap: wrap; /* Allow logos to wrap */
-    }
-  
-    .Logo {
-      width: 4rem;
-      height: 4rem;
-    }
-  
-.Logo h5 {
-  margin-bottom: 1rem;
+
+  .contacts {
+    height: auto;
+    width: 100%;
+    flex-direction: column; /* Stack contact sections */
+    padding: 1.5rem;
+  }
+
+  .details,
+  .message {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .details footer {
+    margin-top: 2rem;
+  }
+
+  .footer {
+    flex-direction: column; /* Stack footer sections */
+    gap: 0;
+  }
+
+  .footer1,
+  .footer2 {
+    width: 45rem; /* Adjusted width for mobile */
+    height: auto;
+    margin: 8rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer1 div {
+    flex-direction: row; /* Layout footer links horizontally in rows */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .footer1 a {
+    margin: 0.5rem 1rem;
+    font-size: 1.2rem;
+    margin-top: 1rem; /* Adjust margin for stacked layout */
+  }
+
+  .copyright {
+    position: static; /* Remove absolute positioning */
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+  }
+
+  .cta-content {
+    max-width: none;
+    margin: 1rem auto;
+    text-align: center;
+    height: auto;
+  }
+
+  .cta-content h3 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    margin-left: 0;
+  }
 }
 
-
-    .xmore {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .box2A,
-    .box2B,
-    .box2C {
-      width: calc(
-        50% - 1rem
-      ); /* Two columns, considering gap, for explore cards */
-      margin-bottom: 1rem;
-    }
-  
-    .community {
-      width: 100%;
-      height: auto;
-      flex-direction: column;
-      padding: 1.5rem;
-      gap: 1rem;
-    }
-  
-    .pic4 {
-      width: 90%;
-      height: auto;
-      margin: 1rem auto;
-    }
-  
-    .help {
-      flex-direction: column; /* Stack help sections */
-    }
-  
-    .help1,
-    .help2 {
-      height: auto; /* Auto height for content */
-    }
-  
-    .helps1,
-    .helps {
-      width: 90%; /* Adjust width for smaller screens */
-      font-size: 1.3rem;
-    }
-  
-    .question,
-    .answer {
-      font-size: 1.2rem;
-      margin-left: 1rem;
-    }
-  
-    .help2 button {
-      font-size: 1.5rem;
-      margin-left: 2rem;
-    }
-  
-    .contacts {
-      height: auto;
-      width: 100%;
-      flex-direction: column; /* Stack contact sections */
-      padding: 1.5rem;
-    }
-  
-    .details,
-    .message {
-      width: 100%;
-      margin: 0;
-      margin-bottom: 1.5rem;
-    }
-  
-    .details footer {
-      margin-top: 2rem;
-    }
-  
-    .footer {
-      flex-direction: column; /* Stack footer sections */
-      gap: 0;
-    }
-  
-    .footer1,
-    .footer2 {
-      width: 90%; /* Adjusted width for mobile */
-      height: auto;
-      margin: 0;
-      border-radius: 1rem;
-      margin-bottom: 1rem;
-    }
-  
-    .footer1 div {
-      flex-direction: row; /* Layout footer links horizontally in rows */
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 1rem 0;
-    }
-  
-    .footer1 a {
-      margin: 0.5rem 1rem;
-      font-size: 1.2rem;
-      margin-top: 1rem; /* Adjust margin for stacked layout */
-    }
-  
-    .copyright {
-      position: static; /* Remove absolute positioning */
-      text-align: center;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-      margin-left: 1rem;
-    }
-  
-    .cta-content {
-      max-width: none;
-      margin: 1rem auto;
-      text-align: center;
-      height: auto;
-    }
-  
-    .cta-content h3 {
-      font-size: 2rem;
-    }
-  
-    .cta-button {
-      margin-left: 0;
-    }
+/* SM Breakpoint (Mobile) - Below 768px */
+@media (max-width: 767px) {
+  .body {
+    margin: 1rem;
   }
-  
-  /* SM Breakpoint (Mobile) - Below 768px */
-  @media (max-width: 767px) {
-    .navbar {
-      padding: 0 0.5rem;
-      margin-top: 0.5rem;
-    }
-  
-    #logo {
-      font-size: 1rem;
-      text-align: left; /* Align logo to left for better spacing with hamburger */
-      width: auto; /* Allow logo to take natural width */
-      margin: 10px 0;
-    }
-  
-    /* Ensure hamburger menu is visible and positioned correctly */
-    .hamburger-menu {
-      display: flex;
-      margin-left: auto; /* Ensure it's still pushed to the right */
-    }
-  
-    .Hero {
-      padding: 1.5rem 0.5rem;
-      border-radius: 1rem;
-      margin-top: 1rem;
-    }
-  
-    .pic1,
-    .pic2 {
-      width: 90%;
-      margin: 0.5rem auto;
-    }
-  
-    .hero h1 {
-      font-size: 1.8rem;
-    }
-  
-    .hero p {
-      font-size: 1rem;
-    }
-  
-    .hero button {
-      padding: 10px 40px;
-      font-size: 1rem;
-      width: 90%; /* Make button closer to full width */
-    }
-  
-    .container,
-    .Container,
-    .xmore,
-    .testimonials,
-    .help,
-    .contacts {
-      padding: 15px;
-      gap: 0.75rem; /* Even smaller gap for mobile */
-    }
-  
-    /* All main content blocks will stack vertically */
-    .box1,
-    .box2,
-    #box3,
-    #box4,
-    .box1A,
-    .box1B,
-    .box1C,
-    .box2A,
-    .box2B,
-    .box2C,
-    .help1,
-    .help2 {
-      padding: 1rem;
-      width: 100%;
-    }
-  
-    h3 {
-      font-size: 1.5rem;
-      margin-left: 0;
-      text-align: center;
-    }
-  
-    .p2 {
-      font-size: 1.1rem;
-      text-align: center;
-    }
-  
-    .about button,
-    #box3 button,
-    #box4 button {
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      width: calc(100% - 2rem); /* Adjusted for full width */
-      margin-left: 1rem;
-    }
-  
-    .Services {
-      height: auto;
-      padding: 1.5rem 0.5rem;
-      width: 100%;
-    }
-  
-    .path {
-      font-size: 1.8rem;
-    }
-  
-    .p3 {
-      font-size: 1.2rem;
-      text-align: center;
-    }
-  
-    .More {
-      padding: 1rem;
-      border-radius: 1rem;
-    }
-  
-    #more {
-      font-size: 1.1rem;
-      text-align: center;
-    }
-  
-    #Learn {
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      width: calc(100% - 2rem); /* Adjusted for full width */
-      margin-left: 1rem;
-    }
-  
-    .testimonials {
-      flex-direction: column; /* Stack all testimonials */
-    }
-  
-    .box1B,
-    .box1C {
-      display: none; /* Hide additional testimonials, show one at a time via JS */
-    }
-  
-    .testimonials h4 {
-      font-size: 1.8rem;
-      margin-left: 0;
-      text-align: center;
-    }
-  
-    .testimonials p {
-      font-size: 1.1rem;
-      padding-left: 1rem;
-      text-align: center;
-    }
-  
-    .testimonials button {
-      width: 2rem;
-      height: 2rem;
-      font-size: 1.2rem;
-    }
-  
-    .logo {
-      padding: 1rem 0.5rem;
-      height: auto;
-      border-radius: 1rem;
-    }
-  
-    .partners #logo {
-      /* Targeted with new class to avoid conflict with nav #logo */
-      gap: 0rem;
-      flex-direction: column; /* Stack logos vertically */
 
-    }
-  
-    .Logo {
-      width: 3rem;
-      height: 3rem;
-    }
-  
-    #learn {
-      font-size: 1.1rem;
-    }
-  
-    .xmore {
-      flex-direction: column; /* Stack explore cards */
-    }
-  
-    .box2A button,
-    .box2B button,
-    .box2C button {
-      padding: 0.8rem 2rem;
-      font-size: 0.9rem;
-      width: calc(100% - 2rem); /* Adjusted for full width */
-      margin-left: 1rem;
-    }
-  
-    .community {
-      padding: 1rem;
-      border-radius: 1rem;
-    }
-  
-    .community h3 {
-      font-size: 2rem;
-      text-align: center;
-    }
-  
-    #Community {
-      font-size: 1.1rem;
-      text-align: center;
-    }
-  
-    .community button {
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      width: calc(100% - 2rem); /* Adjusted for full width */
-      margin-left: 1rem;
-    }
-  
-    .pic4 {
-      width: 100%;
-      height: auto;
-      margin: 1rem auto;
-    }
-  
-    .help1 h3 {
-      font-size: 2rem;
-    }
-  
-    #help1 {
-      font-size: 1.1rem;
-      margin-left: 1rem;
-    }
-  
-    .pic5 {
-      width: 90%;
-      height: auto;
-    }
-  
-    .helps1,
-    .helps {
-      width: 95%;
-      height: auto; /* Allow height to adjust */
-      font-size: 1.1rem;
-      flex-direction: column; /* Stack question and answer */
-      align-items: flex-start;
-      padding: 0.5rem;
-    }
-  
-    .question {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-  
-    .answer {
-      font-size: 0.9rem;
-      margin-left: 0;
-      margin-top: 0.2rem;
-    }
-  
-    .help2 button {
-      margin-left: 0;
-      align-self: flex-end; /* Align toggle button to the right */
-      padding: 0.2rem 0.5rem;
-      font-size: 1rem;
-    }
-  
-    .contacts {
-      padding: 1rem;
-      margin-top: 2rem;
-      border-radius: 1rem;
-    }
-  
-    .details h3 {
-      font-size: 1.8rem;
-      margin-left: 0.5rem;
-    }
-  
-    .details p {
-      font-size: 1.1rem;
-      margin-left: 1rem;
-    }
-  
-    .pic6 {
-      width: 90%;
-      height: auto;
-      margin-left: 0.5rem;
-    }
-  
-    .details footer {
-      font-size: 1rem;
-      margin-left: 1rem;
-      margin-top: 1rem;
-    }
-  
-    .message {
-      border-radius: 1.5rem;
-      padding: 1rem;
-    }
-  
-    label {
-      font-size: 1.1rem;
-      margin-left: 1rem;
-    }
-  
-    #text {
-      width: calc(100% - 2rem);
-      margin-left: 1rem;
-    }
-  
-    .message button {
-      width: calc(100% - 2rem);
-      padding: 10px;
-      font-size: 1.1rem;
-      margin-left: 1rem;
-    }
-  
-    .footer1 a {
-      font-size: 1rem;
-      margin: 0.3rem 0.5rem;
-      margin-top: 0.5rem;
-    }
-  
-    .cta-content h3 {
-      font-size: 1.5rem;
-    }
-  
-    .cta-button {
-      padding: 10px 20px;
-      font-size: 1rem;
-    }
+  .navbar {
+    padding: 0 0.5rem;
+    margin-top: 0.5rem;
   }
+
+  #logo {
+    font-size: 1rem;
+    text-align: left; /* Align logo to left for better spacing with hamburger */
+    width: auto; /* Allow logo to take natural width */
+    margin: 10px 0;
+  }
+
+  /* Ensure hamburger menu is visible and positioned correctly */
+  .hamburger-menu {
+    display: flex;
+    margin-left: auto; /* Ensure it's still pushed to the right */
+  }
+
+  .Hero {
+    padding: 1.5rem 0.5rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+
+  .pic1,
+  .pic2 {
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero button {
+    padding: 10px 40px;
+    font-size: 1rem;
+    width: 90%; /* Make button closer to full width */
+  }
+
+  .container,
+  .Container,
+  .xmore,
+  .testimonials,
+  .help,
+  .contacts {
+    padding: 15px;
+    gap: 0.75rem; /* Even smaller gap for mobile */
+  }
+
+  /* All main content blocks will stack vertically */
+  .box1,
+  .box2,
+  #box3,
+  #box4,
+  .box1A,
+  .box1B,
+  .box1C,
+  .box2A,
+  .box2B,
+  .box2C,
+  .help1,
+  .help2 {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .p2 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .about button,
+  #box3 button,
+  #box4 button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    width: calc(100% - 2rem); /* Adjusted for full width */
+    margin-left: 1rem;
+  }
+
+  .Services {
+    height: auto;
+    padding: 1.5rem 0.5rem;
+    width: 100%;
+  }
+
+  .path {
+    font-size: 1.8rem;
+  }
+
+  .p3 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .More {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  #more {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  #Learn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    width: calc(100% - 2rem); /* Adjusted for full width */
+    margin-left: 1rem;
+  }
+
+  .testimonials {
+    flex-direction: column; /* Stack all testimonials */
+  }
+
+  .box1B,
+  .box1C {
+    display: none; /* Hide additional testimonials, show one at a time via JS */
+  }
+
+  .testimonials h4 {
+    font-size: 1.8rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .testimonials p {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    text-align: center;
+  }
+
+  .testimonials button {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    padding: 1rem 0.5rem;
+    height: auto;
+    border-radius: 1rem;
+  }
+
+  .partners #logo {
+    /* Targeted with new class to avoid conflict with nav #logo */
+    gap: 0rem;
+    flex-direction: column; /* Stack logos vertically */
+  }
+
+  .Logo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #learn {
+    font-size: 1.1rem;
+  }
+
+  .xmore {
+    flex-direction: column; /* Stack explore cards */
+  }
+
+  .box2A button,
+  .box2B button,
+  .box2C button {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    width: calc(100% - 2rem); /* Adjusted for full width */
+    margin-left: 1rem;
+  }
+
+  .community {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .community h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  #Community {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .community button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    width: calc(100% - 2rem); /* Adjusted for full width */
+    margin-left: 1rem;
+  }
+
+  .pic4 {
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  .help1 h3 {
+    font-size: 2rem;
+  }
+
+  #help1 {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+  }
+
+  .pic5 {
+    width: 90%;
+    height: auto;
+  }
+
+  .helps1,
+  .helps {
+    width: 95%;
+    height: auto; /* Allow height to adjust */
+    font-size: 1.1rem;
+    flex-direction: column; /* Stack question and answer */
+    align-items: flex-start;
+    padding: 0.5rem;
+  }
+
+  .question {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .answer {
+    font-size: 0.9rem;
+    margin-left: 0;
+    margin-top: 0.2rem;
+  }
+
+  .help2 button {
+    margin-left: 0;
+    align-self: flex-end; /* Align toggle button to the right */
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  .contacts {
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+  }
+
+  .details h3 {
+    font-size: 1.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .details p {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+  }
+
+  .pic6 {
+    width: 90%;
+    height: auto;
+    margin-left: 0.5rem;
+  }
+
+  .details footer {
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  .message {
+    border-radius: 1.5rem;
+    padding: 1rem;
+  }
+
+  label {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+  }
+
+  #text {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+  }
+
+  .message button {
+    width: calc(100% - 2rem);
+    padding: 10px;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+  }
+
+  .footer1 a {
+    font-size: 1rem;
+    margin: 0.3rem 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .cta-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Overall section container */
+.main-testimonials-section {
+  display: flex; /* Arranges the fixed box and the slider next to each other */
+  width: 36rem; /* Max width for the entire section, adjust as needed */
+  width: 98rem;
+  gap: 20px; 
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+/* The fixed box (previously .box1A) */
+.box1A-fixed {
+  flex-shrink: 0; /* Prevents this box from shrinking */
+  width: 36rem; /* Give it a fixed width */
+  background-color: #e6f3ee; /* Light green from your screenshot */
+  border-radius: 8px;
+  padding: 2rem;
+  height: 16rem;
+  margin-top: 2rem;
+}
+
+#testimonials-heading {
+  color: #555; /* Example color */
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.box1A-fixed h4 {
+  font-size: 1.9rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+
+}
+
+.box1A,
+.box1B,
+.box1C,
+.box1D,
+.box1E,
+.box1F,
+.box1G,
+.box1G,
+ p {
+
+  color: #3b3636;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+/* Slider control buttons within the fixed box */
+.slider-controls {
+  margin-top: 20px; /* Space below the text */
+}
+
+.slider-controls button {
+  background-color: #a8e6cf; /* Example button color */
+  border: none;
+  border-radius: 50%; /* Makes them round */
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  color: #333;
+}
+
+.slider-controls button:hover {
+  background-color: #8ce0b8;
+}
+
+/* The viewport for the sliding testimonials */
+.testimonials-slider-viewport {
+  flex-grow: 1; /* Allows it to take up the remaining space next to box1A-fixed */
+  overflow: hidden; /* CRUCIAL: Hides testimonials that are outside the visible area */
+  position: relative; /* If you need absolute positioning for overlays, etc. */
+  border-radius: 8px; /* Apply border-radius here if you want it to match the items */
+}
+
+/* The wrapper that contains all testimonial items and will slide */
+.testimonials-wrapper {
+  display: flex; /* Arranges testimonial items horizontally */
+  transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+  margin: auto;
+}
+
+/* Individual testimonial items */
+.testimonial-item {
+  box-sizing: border-box; /* Include padding and border in width */
+  padding: 20px;
+  background-color: #e6f3ee; /* Light green from your screenshot */
+  border-radius: 8px;
+  margin-right: 20px; /* Space between testimonial cards */
+  flex-shrink: 0; /* Prevents items from shrinking */
+}
