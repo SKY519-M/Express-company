@@ -1622,22 +1622,20 @@ button:hover {
   }
 }
 
-/* Overall section container */
+/* Base styles (LG view, matches provided code) */
 .main-testimonials-section {
-  display: flex; /* Arranges the fixed box and the slider next to each other */
-  width: 36rem; /* Max width for the entire section, adjust as needed */
+  display: flex;
   width: 98rem;
-  gap: 20px; 
+  gap: 20px;
   justify-content: center;
   align-items: center;
   margin: auto;
 }
 
-/* The fixed box (previously .box1A) */
 .box1A-fixed {
-  flex-shrink: 0; /* Prevents this box from shrinking */
-  width: 36rem; /* Give it a fixed width */
-  background-color: #e6f3ee; /* Light green from your screenshot */
+  flex-shrink: 0;
+  width: 36rem;
+  background-color: #e6f3ee;
   border-radius: 8px;
   padding: 2rem;
   height: 16rem;
@@ -1645,7 +1643,7 @@ button:hover {
 }
 
 #testimonials-heading {
-  color: #555; /* Example color */
+  color: #555;
   font-size: 0.8em;
   margin-bottom: 5px;
 }
@@ -1655,7 +1653,6 @@ button:hover {
   margin-top: 0;
   margin-bottom: 15px;
   color: #333;
-
 }
 
 .box1A,
@@ -1665,23 +1662,20 @@ button:hover {
 .box1E,
 .box1F,
 .box1G,
-.box1G,
- p {
-
+p {
   color: #3b3636;
   line-height: 1.5;
   font-size: 1.2rem;
 }
 
-/* Slider control buttons within the fixed box */
 .slider-controls {
-  margin-top: 20px; /* Space below the text */
+  margin-top: 20px;
 }
 
 .slider-controls button {
-  background-color: #a8e6cf; /* Example button color */
+  background-color: #a8e6cf;
   border: none;
-  border-radius: 50%; /* Makes them round */
+  border-radius: 50%;
   width: 40px;
   height: 40px;
   font-size: 1.2em;
@@ -1695,27 +1689,153 @@ button:hover {
   background-color: #8ce0b8;
 }
 
-/* The viewport for the sliding testimonials */
 .testimonials-slider-viewport {
-  flex-grow: 1; /* Allows it to take up the remaining space next to box1A-fixed */
-  overflow: hidden; /* CRUCIAL: Hides testimonials that are outside the visible area */
-  position: relative; /* If you need absolute positioning for overlays, etc. */
-  border-radius: 8px; /* Apply border-radius here if you want it to match the items */
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
 }
 
-/* The wrapper that contains all testimonial items and will slide */
 .testimonials-wrapper {
-  display: flex; /* Arranges testimonial items horizontally */
-  transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+  display: flex;
+  transition: transform 0.5s ease-in-out;
   margin: auto;
 }
 
-/* Individual testimonial items */
 .testimonial-item {
-  box-sizing: border-box; /* Include padding and border in width */
+  box-sizing: border-box;
   padding: 20px;
-  background-color: #e6f3ee; /* Light green from your screenshot */
+  background-color: #e6f3ee;
   border-radius: 8px;
-  margin-right: 20px; /* Space between testimonial cards */
-  flex-shrink: 0; /* Prevents items from shrinking */
+  margin-right: 20px; /* Consistent card spacing with LG */
+  flex-shrink: 0;
+}
+
+/* SM Breakpoint (Mobile, up to 640px) */
+@media screen and (max-width: 640px) {
+  .main-testimonials-section {
+    flex-direction: column; /* Stack fixed box and slider vertically */
+    width: 90vw; /* Responsive width */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .box1A-fixed {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Allow height to adjust */
+    padding: 1.5rem;
+    margin-top: 1rem;
+    text-align: center; /* Center text for better mobile UX */
+  }
+
+  #testimonials-heading {
+    font-size: 0.7rem; /* Slightly smaller for mobile */
+  }
+
+  .box1A-fixed h4 {
+    font-size: 1.4rem; /* Adjusted typography */
+    margin-bottom: 10px;
+  }
+
+  .box1A,
+  .box1B,
+  .box1C,
+  .box1D,
+  .box1E,
+  .box1F,
+  .box1G,
+  p {
+    font-size: 1rem; /* Smaller font for readability */
+    line-height: 1.4;
+  }
+
+  .slider-controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center; /* Center buttons */
+  }
+
+  .slider-controls button {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+
+  .testimonials-slider-viewport {
+    width: 100%; /* Full width */
+  }
+
+  .testimonials-wrapper {
+    /* No changes needed, flex layout works */
+  }
+
+  .testimonial-item {
+    padding: 1rem;
+    margin-right: 20px; /* Maintain consistent card spacing */
+    width: 80vw; /* Single testimonial visible */
+  }
+}
+
+/* MD Breakpoint (Tablet, 641px to 1024px) */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .main-testimonials-section {
+    flex-direction: row; /* Keep side-by-side layout */
+    width: 90vw;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .box1A-fixed {
+    width: 30rem; /* Slightly smaller than LG */
+    height: auto;
+    padding: 1.8rem;
+    margin-top: 1.5rem;
+  }
+
+  #testimonials-heading {
+    font-size: 0.75rem;
+  }
+
+  .box1A-fixed h4 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+
+  .box1A,
+  .box1B,
+  .box1C,
+  .box1D,
+  .box1E,
+  .box1F,
+  .box1G,
+  p {
+    font-size: 1.1rem;
+    line-height: 1.45;
+  }
+
+  .slider-controls {
+    margin-top: 1.5rem;
+  }
+
+  .slider-controls button {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+    margin-right: 9px;
+  }
+
+  .testimonials-slider-viewport {
+    flex-grow: 1;
+  }
+
+  .testimonials-wrapper {
+    /* No changes needed */
+  }
+
+  .testimonial-item {
+    padding: 1.5rem;
+    margin-right: 20px; /* Maintain consistent card spacing */
+    width: 40vw; /* Show partial next testimonial */
+  }
 }
